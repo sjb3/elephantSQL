@@ -1,28 +1,35 @@
 var express = require('express');
 var app = express()
 var config = require('./config')
-// console.log(config)
+
 var DB = config.DB
 var PORT = config.PORT
 var models = require('./models')
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  //////// 2/3
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/route', function(req, res){
-  res.json({hello:'Is it working?'})
+  res.json({hello:'Meow?'})
+
 })
 app.get('/hws', function(req, res){
   models.Hw.findAll(),then(function(hws){
     res.json(hws)
   })
 })
+// app.get('http://localhost:3000/articles_09', function(req,res){
+//   models.Hw.findAll().then(function(articles){
+//     res.json(articles)
+//   })
+// })
 
 models.sequelize.sync({force: true}).then(function(x){
-  // models.Hw.create(
-  //       {
-  //        title: "Transmitting Open-source Arrays",
-  //        category: "firewall",
-  //        author: "Dr. Tressie Kuphal",
-  //        authorUrl: "http://http://corrine.net"
-  //      }),
+
   models.Hw.create(
     {
   title: "Transmitting Open-source Arrays",
@@ -68,36 +75,6 @@ models.sequelize.sync({force: true}).then(function(x){
   publishedOn: "2013-06-13",
   body: "## We need to quantify the 1080p JSON pixel!\n\nIf we calculate the sensor, we can get to the GB sensor through the cross-platform GB sensor! Rem totam nostrum.\nNisi aliquam iure reiciendis minima asperiores omnis aliquid facere aut.\nAut qui est aut minima mollitia fuga accusamus adipisci laborum.\n \rAut repellat natus molestiae rerum nihil eveniet non beatae neque.\nNemo impedit ipsa aut eaque qui numquam rem rerum.\nA quibusdam repellendus et nemo quisquam et.\nProvident iusto saepe repudiandae id.\nFuga nam et et dolore.\nPossimus placeat culpa maiores et.\n \rCorporis in cum velit dolor perspiciatis.\nAccusamus nostrum odio odit debitis quia voluptas.\nNecessitatibus libero soluta sunt aut sapiente voluptatem ducimus.\nQuo dolor est provident eos aut asperiores. You can't override the pixel without copying the optical JSON pixel!\n\nOmnis laudantium eos perferendis quo voluptate quas illo.\nRerum molestiae magnam velit quia dicta quod occaecati perspiciatis quia.\nAperiam aut vero tenetur.\nVoluptas numquam enim ea aperiam.\nRerum illo voluptatem qui officia voluptatem.\nVeritatis aut numquam et nostrum voluptatem quasi voluptas perferendis odio.\n \rEst quisquam necessitatibus natus cum laboriosam ad sit sint dolores.\nQuisquam ipsum dolorem architecto fugit et necessitatibus.\nAliquid eligendi ea unde eos culpa itaque alias et.\nAtque officia est quod sint qui ea tempore tenetur non.\nRepellat ex eius ipsam id amet ut quas quos ea.\nSapiente qui laudantium explicabo facere.\n \rFacilis incidunt debitis corrupti.\nAccusantium nostrum iusto dolor natus molestias ab est.\nVoluptates non fugiat rem accusamus perferendis et.\n## I'll program the haptic XML system, that should system the XML system!\n\nI'll reboot the wireless COM feed, that should feed the COM feed! Hic qui necessitatibus.\nDelectus consequatur sit deserunt quo repellendus.\nAb nihil ex quo consequatur asperiores exercitationem.\nAut facere aliquid sit ad tenetur quo.\nOccaecati vero fugit blanditiis ut omnis asperiores.\n \rEst sed vel asperiores nihil eveniet voluptas ea quasi.\nPossimus architecto doloremque.\nIllo exercitationem perferendis dignissimos dolorum non enim id molestias omnis.\nId qui suscipit sint velit.\nIn animi nihil delectus.\n \rQuia minus assumenda suscipit temporibus.\nAut unde non consequatur voluptas quis ut.\nMolestiae quia vero voluptates voluptatem ut velit et sit.\nAliquid doloribus optio eveniet sed quibusdam ipsum. Try to program the TCP monitor, maybe it will program the mobile monitor!\n\nMagni vel consequatur labore mollitia.\nQuasi amet unde est quis voluptate ut quaerat quidem fuga.\nEt assumenda vitae provident vel nostrum est unde eligendi ullam.\nRepellendus magni laborum neque et nihil.\nFugit ex in quisquam consequatur omnis est perspiciatis.\n \rDolore vel hic aliquam.\nSit ipsum sunt in impedit cum qui.\nAlias sunt ab fuga est maxime sed eius.\nNesciunt molestias dolore suscipit eos necessitatibus nihil aliquam architecto id.\nEst hic repellendus.\n \rQui est eveniet quasi.\nImpedit quam illum in aliquid.\nNobis quia dolorem eum quia necessitatibus blanditiis repellat.\nEt unde quos ipsam quis et.\nEst velit molestiae quae architecto expedita nostrum non est quo.\nFacere culpa saepe est velit repellat eos ex est.\n## Try to index the SMTP panel, maybe it will index the multi-byte panel!\n\nWe need to quantify the bluetooth THX capacitor! Error assumenda consequatur fugit exercitationem iste.\nSimilique unde dolores.\nDeleniti est omnis dicta.\nSuscipit cumque sed dolor magnam earum qui et iure.\nNostrum alias enim fugiat voluptas tenetur.\n \rDucimus enim illum voluptatem et id.\nQuaerat sequi impedit voluptatem ipsam ducimus et maxime.\nUt aut non veritatis enim incidunt delectus consequuntur est nobis.\nSuscipit est omnis totam accusantium ipsum ea sit vel ipsam.\nRatione quis incidunt enim eius ex occaecati non optio molestiae.\n \rVoluptate veniam saepe velit et.\nReprehenderit delectus omnis ea blanditiis quia nemo consectetur iure est.\nConsequatur reiciendis est totam doloremque ducimus eveniet.\nDignissimos eaque dolorem est error. You can't transmit the bandwidth without copying the bluetooth RSS bandwidth!\n\nAut velit et eligendi excepturi et enim est quia.\nAccusantium sint recusandae rerum.\nAut eos officia reprehenderit est.\nExplicabo tenetur aperiam quis et doloribus.\nHic in accusamus libero est maxime dolorem vel.\n \rOptio eum minima ratione earum id voluptas ipsum enim.\nNecessitatibus provident inventore sunt deleniti est.\nAsperiores quasi qui et voluptas.\nQuia soluta sapiente.\n \rNon neque deleniti quisquam earum voluptatem maxime.\nVoluptatem libero sed itaque at possimus incidunt ut.\nMaiores nesciunt incidunt excepturi unde provident et cupiditate facilis.\nDoloribus praesentium minima sunt tempore ut sit expedita alias.\n## I'll reboot the auxiliary XSS transmitter, that should transmitter the XSS transmitter!\n\nTry to navigate the SSL monitor, maybe it will navigate the virtual monitor! Earum eum id mollitia dignissimos et.\nFacere officia quos eum adipisci voluptatum porro.\nEt velit cupiditate rerum quod placeat.\nCulpa quo occaecati sit.\n \rNam et qui impedit.\nPraesentium et tenetur.\nEst est similique corporis qui.\nVoluptatem delectus illo est officiis.\n \rMagni fugiat error numquam aut dignissimos corrupti.\nCulpa repudiandae ullam sed enim et.\nId soluta quod culpa ut nam.\nVoluptas recusandae dolorem expedita unde.\nCumque officiis laudantium voluptatem modi et et. I'll input the haptic IB pixel, that should pixel the IB pixel!\n\nAnimi voluptatem earum corrupti dolores debitis est quis ut.\nQui sunt ea sint nulla maiores dolor eum.\nEum expedita et aperiam illo.\nAb sed sapiente veniam excepturi vitae a totam est voluptatibus.\nQuaerat rem ea.\n \rMagnam iusto sint corrupti.\nEt est fugiat rem.\nLaborum eligendi nihil ab deleniti libero aut illum autem.\nSed alias rerum ut dolorem.\nEnim autem quibusdam deleniti quidem magnam dolorum qui delectus.\n \rSunt omnis id aut animi consectetur ut ipsum dignissimos nulla.\nDoloribus non libero.\nDolorem eveniet corrupti et optio assumenda incidunt fuga quo iste.\nProvident beatae et quia sequi dolorum est sint.\nAut dolorem rerum omnis harum est fuga doloribus.\nQuisquam sint labore qui.\n## I'll input the digital HDD pixel, that should pixel the HDD pixel!\n\nWe need to parse the optical SQL bandwidth! Aperiam vero laborum ad quod porro repellat odio saepe quaerat.\nIn quas sunt et.\nEius excepturi quibusdam aut soluta.\nAccusantium repellendus numquam cupiditate sed exercitationem.\nRepellendus aliquam molestiae omnis temporibus nihil architecto quam sit sed.\nSit eos autem possimus delectus est aliquam quod et.\n \rNihil non molestiae.\nAperiam enim sunt ea.\nAut nisi quia saepe laudantium dolores quisquam deleniti earum.\n \rInventore autem earum qui suscipit rerum nemo.\nPorro voluptas molestiae voluptatem soluta ab nemo.\nEt nobis reiciendis quibusdam quo rerum repellendus.\nAb nihil vel.\nAut aut sunt. copying the hard drive won't do anything, we need to navigate the back-end JBOD hard drive!\n\nExcepturi voluptates et totam voluptatem at minima voluptatem culpa sequi.\nVoluptas sit aut doloribus voluptas asperiores.\nVelit delectus enim.\nFuga consequatur suscipit.\nQuod quasi pariatur quis ut voluptatum.\nRepudiandae ab ut ad quia.\n \rAlias et error et quasi aut sapiente tempore.\nQuos laborum ipsum autem sed nulla.\nSimilique id provident molestiae ex deleniti officiis doloribus harum numquam.\nAccusamus est tempore dolorem deleniti sint illo rem sed.\nQuia aut quo dolor.\nOmnis est voluptates dolores.\n \rEx harum possimus unde.\nVero ut adipisci.\nNemo consequuntur accusantium ipsum labore sit.\nOmnis necessitatibus quibusdam odit nihil eius officiis et soluta earum.\nSit autem et fugiat adipisci pariatur et.\nOmnis ducimus et aspernatur.\n"
 });
-  //
-  //
-  //      {
-  //        title: "Navigating Haptic Sensors",
-  //        category: "pixel",
-  //        author: "Dr. Tressie Kuphal",
-  //        authorUrl: "http://http://vidal.net"
-  //      }),
-  // models.Hw.create(
-  //      {
-  //        title: "Overriding Redundant Feeds",
-  //        category: "sensor",
-  //        author: "Miss Alison Kuvalis",
-  //        authorUrl: "http://http://anibal.org"
-  //      }),
-  // models.Hw.create(
-  //       {
-  //        title: "Indexing Digital Digital Bus Programs",
-  //        category: "card",
-  //        author: "Virginia Sawayn",
-  //        authorUrl: "http://https://felicity.net"
-  //           }),
-  // models.Hw.create(
-  //      {
-  //        title: "Copying Solid state Wireless Panels",
-  //        category: "protocol",
-  //        author: "Dr. Tressie Kuphal",
-  //        authorUrl: "http://https://eleanore.name"
-  //      });
-
   app.listen(PORT, function(){
     console.log('server started')
     console.log('listening on PORT: ' + PORT)
