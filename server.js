@@ -18,7 +18,8 @@ app.get('/route', function(req, res){
 
 })
 app.get('/hws', function(req, res){
-  models.Hw.findAll(),then(function(hws){
+  console.log('hello');
+  models.Hw.findAll().then(function(hws){
     res.json(hws)
   })
 })
